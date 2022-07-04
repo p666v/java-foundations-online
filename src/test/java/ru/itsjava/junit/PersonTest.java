@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Класс Person должен: ")
 public class PersonTest {
@@ -53,11 +52,8 @@ public class PersonTest {
         actualPerson.takeBeer();
         actualPerson2.takeBeer();
 
-        assertEquals(DEFAULT_AGE, actualPerson.getAge());
-        assertEquals(NEW_AGE, actualPerson2.getAge());
-
-        System.out.println(actualPerson.takeBeer());
-        System.out.println(actualPerson2.takeBeer());
+        assertTrue(actualPerson.takeBeer());
+        assertFalse(actualPerson2.takeBeer());
 
     }
 
