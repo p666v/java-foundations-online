@@ -1,6 +1,9 @@
 package ru.itsjava.oop3;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
 @Setter
@@ -8,9 +11,12 @@ import lombok.*;
 @EqualsAndHashCode
 
 public class Car {
+
+    public static double price = 1_000_000;
     private final String brand;
     private String model;
     private int power;
+    private String color;
 
 //    public Car(String brand, String model, int power) {
 //        this.brand = brand;
@@ -38,8 +44,16 @@ public class Car {
 //        return power;
 //    }
 
+    public static void setPrice(double priceNew){
+        price = priceNew;
+    }
+
+    public static double getPrice(){
+        return price;
+    }
+
     public void printDetails() {
-        System.out.println("Бренд: " + brand + "\nМодель: " + model + "\nМощность: " + power + " лс");
+        System.out.println("Бренд: " + brand + ", Модель: " + model + ", Мощность: " + power + " лс, " + "Цена: " + price);
     }
 
 
