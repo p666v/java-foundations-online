@@ -1,6 +1,6 @@
 package ru.itsjava.oop1;
 
-public class Figure {
+abstract class Figure {
 
     public final static double PI = 3.1415926535;
 
@@ -11,4 +11,6 @@ public class Figure {
     public void getPerimeter() {
         System.out.println("Вычисление периметра фигуры");
     }
+
+    abstract void getVolume();
 }

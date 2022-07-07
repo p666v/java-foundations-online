@@ -59,5 +59,10 @@ public class Triangle extends Figure {
         System.out.println("Периметр треугольника = " + (sideA + sideB + sideC));
     }
 
+    @Override
+    void getVolume() {
+
+    }
+
 
 }

@@ -25,4 +25,9 @@ public class Square extends Figure {
         System.out.println("Периметр квадрата = " + sideA * 4);
     }
 
+    @Override
+    void getVolume() {
+
+    }
+
 }

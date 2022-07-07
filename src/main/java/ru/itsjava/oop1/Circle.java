@@ -21,4 +21,9 @@ public class Circle extends Figure {
     public void getPerimeter() {
         System.out.println("Периметр круга через радиус " + (2 * PI * radius));
     }
+
+    @Override
+    void getVolume() {
+
+    }
 }
