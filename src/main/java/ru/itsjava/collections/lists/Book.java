@@ -16,6 +16,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "{" + "Название книги: " + nameBook + ", Автор: " + author + ", кол-во стр.: " + numberPages + "}\n";
+        return "{" + "Название книги: " + this.nameBook + ", Автор: " + this.author + ", кол-во стр.: " + this.numberPages + "}\n";
     }
 }
