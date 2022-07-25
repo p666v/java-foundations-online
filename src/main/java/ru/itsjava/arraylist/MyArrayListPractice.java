@@ -17,7 +17,7 @@ public class MyArrayListPractice {
         list.add("elem9");
         list.add("elem10");
         list.add("elem11");
-        list.add(20);
+        list.add("elem12");
         System.out.println("После добавления list.size() = " + list.size());
         System.out.println(list);
         System.out.println("list.isEmpty() = " + list.isEmpty());
@@ -28,9 +28,20 @@ public class MyArrayListPractice {
         System.out.println("list.contains(\"elem11\") = " + list.contains("elem11"));
         System.out.println("list.contains(10) = " + list.contains(10));
 
-        list.clear();
-        System.out.println(list);
+//        list.clear();
+//        System.out.println(list);
 
+        System.out.println("list.get(3) = " + list.get(3));
+        System.out.println("list.set(11, \"elem12\") = " + list.set(11, "elem12"));
+        System.out.println(list);
+        System.out.println("list.size() = " + list.size());
+        System.out.println("list.add(3,\"TEST\") = " + list.add(3, "TEST"));
+        System.out.println(list);
+        System.out.println("list.size() = " + list.size());
+        System.out.println("list.indexOf(elem11) = " + list.indexOf("elem11"));
+        System.out.println("list.indexOf(elem10) = " + list.indexOf("elem10"));
+        System.out.println("list.indexOf(elem12) = " + list.indexOf("elem12"));
+        System.out.println("list.lastIndexOf(\"elem12\") = " + list.lastIndexOf("elem12"));
 
     }
 }
