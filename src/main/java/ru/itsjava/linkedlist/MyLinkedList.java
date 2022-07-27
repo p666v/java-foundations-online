@@ -25,12 +25,12 @@ public class MyLinkedList {
     public boolean contains(Object o) {
         if (head == null) {
             return false;
+        } else if (o.equals(head.getValue())) {
+            return true;
         } else {
             Node curNode = head;
             while ((curNode = curNode.getNext()) != null) {
-                if (o.equals(head.getValue())) {
-                    return true;
-                } else if (o.equals(curNode.getValue())) {
+                if (o.equals(curNode.getValue())) {
                     return true;
                 }
             }
