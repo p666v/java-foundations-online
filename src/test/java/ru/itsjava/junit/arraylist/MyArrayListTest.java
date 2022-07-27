@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MyArrayListTest {
     public static final int DEFAULT_SIZE = 0;
     public static final String DEFAULT_OBJECT = "TEST";
-    private static final int DEFAULT_CAPACITY = 10;
-    private Object[] array;
 
     @DisplayName("Должен корректно создавать список через конструктор")
     @Test
