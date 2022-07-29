@@ -41,6 +41,18 @@ public class MyLinkedListPractice {
         System.out.println("list2.get(3) = " + list2.get(3));
         System.out.println("list2.set(2, \"Строка 22\") = " + list2.set(2, "Строка 22"));
         System.out.println("list2.get(2) = " + list2.get(2));
+
+        MyLinkedList list3 = new MyLinkedList();
+        list3.add(111);
+        list3.add(222);
+        list3.add(222);
+        list3.add(222);
+        list3.add(444);
+        System.out.println("list3.indexOf(222) = " + list3.indexOf(222));
+        System.out.println("list3.lastIndexOf(222) = " + list3.lastIndexOf(222));
+        System.out.println("list3.indexOf(555) = " + list3.indexOf(555));
+        System.out.println("list3.lastIndexOf(555) = " + list3.lastIndexOf(555));
+
     }
 
 

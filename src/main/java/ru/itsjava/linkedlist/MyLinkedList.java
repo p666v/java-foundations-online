@@ -53,11 +53,47 @@ public class MyLinkedList {
     }
 
     public boolean remove(Object o) {
-        return false;
+        if (head == null) return false; // проверка на null (если список пуст, то удалять не надо)
+
+        if (head.getValue().equals(o)) { // если есть совпадение, то присвоить хэду ссылку на след. эл-т
+            head = head.getNext(); // хэду присваеваем значение следующего эл-та
+            return true;
+        }
+
+        if (head.getNext() == null)
+            return false; // проверка, есть ли след.эл-т после хэда. если бы эл-т был в списке, то уже нашли и удалили
+
+        Node curNode = head; // текущему эл-ту присвоим хэд
+        Node prevNode = head; // предыдущему присвоим хэд
+
+        while ((curNode = curNode.getNext()) != null) { // бежим до тех пор пока не упремся в налл.
+            if (curNode.getValue().equals(o)) { // если есть совпадение, заканчиваем бежать
+                break;
+            }
+            prevNode = prevNode.getNext(); // присваиваем значение элемента стоящего перед удаляемым элементом
+        }
+
+        if (curNode == null) return false; // проверка на налл, если мы добежали до конца списка
+
+        prevNode.setNext(curNode.getNext()); //перенаправляем ссылку предыдущего элемента на следующий после удаляемого
+        curNode.setNext(null); //обнуляем ссылку удаляемого
+        return true;
     }
 
     public void clear() {
         head = null;
+
+//        Node curNode = head;
+//        Node prevNode = head;
+//        while (curNode != null) {
+//            curNode = curNode.getNext();
+//
+//            }
+//
+//        }
+
+
+
     }
 
     public Object get(int index) {
@@ -152,11 +188,28 @@ public class MyLinkedList {
     }
 
     public int indexOf(Object o) {
-        return 0;
+        int index = 0;
+        Node curNode = head;
+        while (curNode != null) {
+            if (curNode.getValue().equals(o)) return index;
+            index++;
+            curNode = curNode.getNext();
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        int index = 0;
+        int res = -1;
+        Node curNode = head;
+        while (curNode != null) {
+            if (curNode.getValue().equals(o)) {
+                res = index;
+            }
+            index++;
+            curNode = curNode.getNext();
+        }
+        return res;
     }
 
     @Override
