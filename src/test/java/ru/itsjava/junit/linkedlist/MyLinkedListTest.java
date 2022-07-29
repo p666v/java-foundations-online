@@ -125,22 +125,6 @@ public class MyLinkedListTest {
                 ()-> assertEquals("ЗАМЕНА",list2.get(1)));
     }
 
-    @DisplayName("Должен корректно добавлять объект в список по индексу")
-    @Test
-    public void shouldHaveAddIndex(){
-
-        MyLinkedList list2 = new MyLinkedList();
-        list2.add(DEFAULT_OBJECT);
-        list2.add("TEST1");
-        list2.add("TEST2");
-        list2.add("TEST3");
-        list2.add(2,"WWW");
-        assertAll("Добавление в список по индексу",
-                ()-> assertTrue(list2.contains("WWW")),
-                ()-> assertEquals(2,list2.indexOf("WWW")),
-                ()-> assertEquals(5,list2.size()));
-    }
-
     @DisplayName("Должен корректно удалять объект по индексу")
     @Test
     public void shouldHaveRemoveOfIndex(){

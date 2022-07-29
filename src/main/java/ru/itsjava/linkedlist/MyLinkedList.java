@@ -134,10 +134,6 @@ public class MyLinkedList {
         return element;
     }
 
-    public void add(int index, Object element) {
-
-    }
-
     public Object remove(int index) {
         checkIndex(index); // проверяем кооректность индекса
         //В этом блоке условия для одного либо первого элемента
