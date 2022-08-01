@@ -81,17 +81,16 @@ public class MyLinkedList {
     }
 
     public void clear() {
+//        head = null;
+        Node curNode = head;
+        Node prevNode = head;
+
+        while (prevNode != null) {
+            curNode = curNode.getNext();
+            prevNode.setNext(null);
+            prevNode = curNode;
+        }
         head = null;
-
-//        Node curNode = head;
-//        Node prevNode = head;
-//        while (curNode != null) {
-//            curNode = curNode.getNext();
-//
-//            }
-//
-//        }
-
 
 
     }
