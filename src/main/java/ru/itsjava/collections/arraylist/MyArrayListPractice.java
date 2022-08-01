@@ -1,4 +1,4 @@
-package ru.itsjava.arraylist;
+package ru.itsjava.collections.arraylist;
 
 public class MyArrayListPractice {
     public static void main(String[] args) {

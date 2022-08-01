@@ -1,4 +1,4 @@
-package ru.itsjava.linkedlist;
+package ru.itsjava.collections.linkedlist;
 
 public class MyLinkedList {
     private Node head;

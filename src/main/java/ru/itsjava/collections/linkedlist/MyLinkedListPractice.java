@@ -1,6 +1,4 @@
-package ru.itsjava.linkedlist;
-
-import java.util.LinkedList;
+package ru.itsjava.collections.linkedlist;
 
 public class MyLinkedListPractice {
     public static void main(String[] args) {

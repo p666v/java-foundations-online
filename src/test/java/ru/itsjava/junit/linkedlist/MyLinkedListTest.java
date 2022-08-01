@@ -2,7 +2,7 @@ package ru.itsjava.junit.linkedlist;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.itsjava.linkedlist.MyLinkedList;
+import ru.itsjava.collections.linkedlist.MyLinkedList;
 
 
 import static org.junit.jupiter.api.Assertions.*;

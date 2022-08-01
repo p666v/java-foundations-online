@@ -2,7 +2,7 @@ package ru.itsjava.junit.arraylist;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.itsjava.arraylist.MyArrayList;
+import ru.itsjava.collections.arraylist.MyArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
