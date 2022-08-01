@@ -2,9 +2,12 @@ package ru.itsjava.collections.sets;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-@Data
 @AllArgsConstructor
-public class Man {
+@Data
+public class Fruit {
     private final String name;
+    private double mass;
 }
