@@ -33,7 +33,7 @@ public class SetPractice {
         Fruit tangerines = new Fruit("Tangerines", 9.56);
         Fruit oranges = new Fruit("Oranges", 5.18);
         Fruit grapefruits = new Fruit("Grapefruits", 13.24);
-        Fruit lemons = new Fruit("Lemons", 2.11);
+        Fruit lemons = new Fruit("lemons", 2.11);
 
 
         Set<Fruit> citrus = new HashSet<>(Arrays.asList(tangerines, oranges, grapefruits, lemons));
