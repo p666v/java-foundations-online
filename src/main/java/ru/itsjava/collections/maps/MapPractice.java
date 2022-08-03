@@ -13,6 +13,13 @@ public class MapPractice {
         Man javov = new Man("Джавов");
         Man petrov = new Man("Петров");
         Man durov = new Man("Дуров");
+        Man konovalov = new Man("Коновалов");
+        Man zubov = new Man("Зубов");
+        Man gil = new Man("Гиль");
+        Man sergeev = new Man("Сергеев");
+        Man kraev = new Man("Краев");
+        Man kirilov = new Man("Кирилов");
+        Man kravchenko = new Man("Кравченко");
 
         Fruit tangerines = new Fruit("Мандарины", 9.56);
         Fruit oranges = new Fruit("Апельсины", 5.18);
@@ -41,6 +48,7 @@ public class MapPractice {
         System.out.println("--------------------------");
         System.out.println("Получение элемента по ключу (Получить любой фрукт по покупателю)");
         System.out.println("client.get(ivanov) = " + client.get(ivanov));
+
         System.out.println("--------------------------");
         System.out.println("Удаление элемента (Удалить любой фрукт)");
         System.out.println("client.remove(durov) = " + client.remove(durov));
@@ -51,6 +59,7 @@ public class MapPractice {
         System.out.println("Проверка на наличие ключ и значение (Есть ли покупатель с таким фруктом)");
         System.out.println("client.containsKey(ivanov) = " + client.containsKey(ivanov));
         System.out.println("client.containsValue(oranges) = " + client.containsValue(oranges));
+
         System.out.println("--------------------------");
         System.out.println("Вывод Map на экран:\n" +
                 "a) Вывести все ключи (всех покупателей)\n" +
@@ -59,6 +68,103 @@ public class MapPractice {
         System.out.println("client.keySet() = " + client.keySet());
         System.out.println("client.values() = " + client.values());
         System.out.println("client.entrySet() = " + client.entrySet());
+
+        System.out.println("--------------------------");
+        System.out.println("Отфильтровать Map вернуть записи по некоторому условию:\n" +
+                "а) Условие на ключ: вернуть количество ключей длина которых больше 5 (покупателей, чье имя больше 5)\n" +
+                "б) Условие на значение: Вернуть количество элементов, которые равны \"***\" (фруктов, которые равны мандарину)");
+        client.put(durov, tangerines);
+        client.put(konovalov, grapefruits);
+        client.put(zubov, tangerines);
+        client.put(gil, tangerines);
+        client.put(sergeev, tangerines);
+        client.put(kraev, oranges);
+        client.put(kirilov, lemons);
+        client.put(kravchenko, tangerines);
+
+        int count = 0;
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getKey().getName().length() > 5) {
+                count++;
+                System.out.println(pair.getKey().getName());
+            }
+        }
+        System.out.println("Покупателей, чье имя больше 5 = " + count);
+        System.out.println();
+
+        count = 0;
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getValue().getName().equals("Мандарины")) {
+                count++;
+                System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+            }
+        }
+        System.out.println("Покупателей мандарин = " + count);
+
+        System.out.println("--------------------------");
+        System.out.println("Пропустить несколько элементов:\n" +
+                "а) Пропустить 2 элемента, значения которых Мандарины, все остальные вывести\n" +
+                "б) Вывести все кроме 2 элементов, ключи которых начинаются на M");
+        count = 0;
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getValue().getName().equals("Мандарины")) {
+                count++;
+                if (count > 2) {
+                    System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+                }
+
+            }
+        }
+        System.out.println();
+
+        count = 0;
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getValue().getName().charAt(0) == 'М') {
+                count++;
+                if (count > 2) {
+                    System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+                }
+
+            }
+        }
+
+        System.out.println("--------------------------");
+        System.out.println("Вернуть первый подходящий элемент:\n" +
+                "а) Возвращаем элемент значение которого арбуз или Мандарины или МАНдарины");
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getValue().getName().equalsIgnoreCase("МАНдарины")) {
+                System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+                break;
+            }
+        }
+
+        System.out.println("--------------------------");
+        System.out.println("Возвращаем все элементы удовлетворяющие условию:\n" +
+                "а) Возвращаем все элементы в другую карту, которые являются апельсины");
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+        }
+        System.out.println();
+
+        Map<Man, Fruit> orange = new HashMap<>();
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            if (pair.getValue().getName().equalsIgnoreCase("апельсины")) {
+                orange.put(pair.getKey(), pair.getValue());
+            }
+        }
+        for (Map.Entry<Man, Fruit> pair : orange.entrySet()) {
+            System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
+        }
+
+        System.out.println("--------------------------");
+        System.out.println("Найти средний вес всех фруктов.");
+        double sum = 0;
+        for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
+            sum += pair.getValue().getMass();
+        }
+        System.out.println("Средний вес фруктов: " + sum / client.size());
+
+
 
 
 //        men.put(ivanov, "футболка");
