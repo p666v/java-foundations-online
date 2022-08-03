@@ -104,7 +104,7 @@ public class MapPractice {
         System.out.println("--------------------------");
         System.out.println("Пропустить несколько элементов:\n" +
                 "а) Пропустить 2 элемента, значения которых Мандарины, все остальные вывести\n" +
-                "б) Вывести все кроме 2 элементов, ключи которых начинаются на M");
+                "б) Вывести все кроме 2 элементов, ключи которых начинаются на К");
         count = 0;
         for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
             if (pair.getValue().getName().equals("Мандарины")) {
@@ -112,14 +112,13 @@ public class MapPractice {
                 if (count > 2) {
                     System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
                 }
-
             }
         }
         System.out.println();
 
         count = 0;
         for (Map.Entry<Man, Fruit> pair : client.entrySet()) {
-            if (pair.getValue().getName().charAt(0) == 'М') {
+            if (pair.getKey().getName().charAt(0) == 'К') {
                 count++;
                 if (count > 2) {
                     System.out.println(pair.getKey().getName() + ": " + pair.getValue().getName());
