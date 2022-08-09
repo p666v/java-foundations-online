@@ -1,9 +1,9 @@
-package ru.itsjava.threads;
+package ru.itsjava.threads.lecture1;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class PrinterThread extends Thread {
+public class PrinterRunnable implements Runnable {
     private final String message;
     private final long delay;
 
