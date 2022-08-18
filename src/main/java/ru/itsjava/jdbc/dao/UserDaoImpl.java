@@ -6,7 +6,7 @@ public class UserDaoImpl implements UserDao {
 
     public static final String DB_URL = "jdbc:MySql://localhost:3306/schema_itsjava?serverTimezone=UTC";
     public static final String DB_LOGIN = "***";
-    public static final String DB_PASSWORD = "***";
+    public static final String DB_PASSWORD = "****";
 
 
     @Override
